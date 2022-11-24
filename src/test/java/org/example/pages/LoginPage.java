@@ -56,9 +56,7 @@ public class LoginPage extends DriverManager {
         return errorText.getText();
     }
 
-   // public void enterWrongPassword(String WrongEmailText) {
-     //   passwordInputField.sendKeys);
-    //}
+
 
     public void clickOnPassword() {
         passwordInputField.click();

@@ -52,11 +52,6 @@ public class LoginSteps extends DriverManager {
         assertThat(logoutButtonDisplayed, is(true));
     }
 
-   // @When("^I enter invalid password \"([^\"]*)\"$")
-    //public void i_enter_invalid_password(String wrongPassword) throws Throwable {
-      //  loginPage.enterWrongPassword(wrongPassword);
-
-    //}
 
     @And("^I click on password input page on login page$")
     public void iClickOnPasswordInputPageOnLoginPage() throws Throwable {
