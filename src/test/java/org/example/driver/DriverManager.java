@@ -28,7 +28,7 @@ public class DriverManager {
         PageFactory.initElements(driver, this);
     }
 
-    public void runLocalBrowser() throws IllegalAccessException {
+    public void runOnLocalBrowser() throws IllegalAccessException {
         switch (browser) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
@@ -54,34 +54,34 @@ public class DriverManager {
         driver.manage().window().maximize();
     }
 
-    public void applyImplicitWait() {
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    public  void applyImplicitwait() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public void closeBrowser() {
+    public void closeBrowser(){
         driver.quit();
     }
-
-    public void sleepBrowser(int milisecond) throws InterruptedException {
-        Thread.sleep(2000);
+    public void sleepBrowser(int ms) throws InterruptedException {
+        Thread.sleep(ms);
     }
 
-    public void goToUrl() {
+    public void goToURL(){
         driver.get(baseURL);
     }
 
-    public String getUrl() {
+    public String getURL(){
         return driver.getCurrentUrl();
     }
 
-    public String getTitle() {
-  return driver.getTitle();
+    public String getTitle(){
+        return driver.getTitle();
     }
-    public WebElement waitUntilElementIsClickable(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver,20);
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
 
+    public WebElement waitUntilElementIsClickable(WebElement element){
+        WebDriverWait wait= new WebDriverWait(driver,20);
+        return  wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public void waitForElementVisibility(WebElement element, int timeout, String failureMessage) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.withMessage(failureMessage);
@@ -115,10 +115,11 @@ public class DriverManager {
             e.printStackTrace();
         }
     }
-public int generateRandomNumber(){
-    Random random = new Random();
-return random.nextInt(100);
+    public int generateRandomNumber(){
+        Random random= new Random();
+        return random.nextInt(100);
     }
+
     public static String getRandomString(int length) {
         final String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ";
         StringBuilder result = new StringBuilder();
